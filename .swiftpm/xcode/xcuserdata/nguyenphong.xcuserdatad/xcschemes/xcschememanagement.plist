@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Builder.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ConvertSwift-Package.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,12 +17,12 @@
 		<key>ConvertSwift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>DataStructures.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>SwiftExtension-Package.xcscheme_^#shared#^_</key>
 		<dict>
@@ -27,6 +32,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>Builder</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>ConvertSwift</key>
 		<dict>
 			<key>primary</key>

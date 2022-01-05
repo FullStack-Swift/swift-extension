@@ -49,11 +49,35 @@ public extension TreeNode {
 
 //MARK: Remove
 public extension TreeNode {
+  func remove(id: UUID) {
+    if self.id == id {
+      parent?.children.removeAll(where: {$0.id == id})
+    }
+    for child in children {
+      child.remove(id: id)
+    }
+  }
   
 }
 
-// MARK: Extension
+//MARK: Search
+public extension TreeNode where T: Equatable {
+  func remove(value: T) {
+    if self.value == value {
+      parent?.children.removeAll(where: {$0.value == value})
+    }
+    for child in children {
+      child.remove(value: value)
+    }
+  }
+}
+
+
+// MARK: Extension Get
 public extension TreeNode {
+  
+  /// Get array TreeNode
+  /// - Returns: Convert a TreeNode to an array TreeNode without children
   func arrayTreeNode() -> [TreeNode<T>] {
     var arrayTreeNode = [TreeNode<T>]()
     arrayTreeNode.append(self)
@@ -63,6 +87,8 @@ public extension TreeNode {
     return arrayTreeNode
   }
   
+  /// Get array TreeNode
+  /// - Returns: Convert a TreeNode to an array TreeNode without children and hiddenChildren
   func arrayTreeNodeWithRemoveHiddenChildren() -> [TreeNode<T>] {
     var allTreeNode = [TreeNode<T>]()
     allTreeNode.append(self)
@@ -74,6 +100,7 @@ public extension TreeNode {
     return allTreeNode
   }
   
+  /// Get level of TreeNode
   var level: Int {
     var index: Int = 0
     if let parent = parent {
@@ -84,12 +111,16 @@ public extension TreeNode {
     }
   }
   
-  func children(with level: Int) -> [TreeNode<T>] {
+  /// Get all TreeNode in one Level
+  /// - Parameter level: level
+  /// - Returns: return an array TreeNode without children
+  func allchildrenInLevel(_ level: Int) -> [TreeNode<T>] {
     arrayTreeNode().filter{$0.level == level}
   }
   
 }
 
+//MARK: Search
 public extension TreeNode where T: Equatable {
   func search(value: T) -> TreeNode? {
     if value == self.value {
@@ -103,7 +134,7 @@ public extension TreeNode where T: Equatable {
     return nil
   }
 }
-
+//MARK: Search
 public extension TreeNode {
   func search(id: UUID) -> TreeNode? {
     if self.id == id {
@@ -117,7 +148,7 @@ public extension TreeNode {
     return nil
   }
 }
-
+//MARK: description
 extension TreeNode: CustomStringConvertible {
   public var description: String {
     var s = "\(value)"

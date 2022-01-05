@@ -13,6 +13,9 @@ let package = Package(
     .library(
       name: "DataStructures",
       targets: ["DataStructures"]),
+    .library(
+      name: "Builder",
+      targets: ["Builder"]),
   ],
   dependencies: [
     // Dependencies declare other packages that this package depends on.
@@ -27,6 +30,9 @@ let package = Package(
       dependencies: []),
     .target(
       name: "DataStructures",
+      dependencies: []),
+    .target(
+      name: "Builder",
       dependencies: []),
     .testTarget(
       name: "ConvertSwiftTests",
