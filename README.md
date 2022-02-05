@@ -273,6 +273,16 @@ if let dict = model.toDictionary() {
 }
 
 ```
+Installation
+
+Swift Package Manager
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/FullStack-Swift/Networking", .upToNextMajor(from: "1.0.0"))
+]
+```
+
 ```
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 February 2021
