@@ -273,9 +273,10 @@ if let dict = model.toDictionary() {
 }
 
 ```
-Installation
 
-Swift Package Manager
+# Installation
+
+## Swift Package Manager
 
 ```swift
 dependencies: [
