@@ -1,9 +1,9 @@
 import Foundation
 import Nimble
 import Quick
-import ConvertSwift
+import Transform
 
-class ConvertSwiftSpec: QuickSpec {
+class TransformSpec: QuickSpec {
     
     override func spec() {
         

@@ -9,22 +9,17 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>ConvertSwift-Package.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>ConvertSwift.xcscheme_^#shared#^_</key>
+		<key>DataStructures.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>DataStructures.xcscheme_^#shared#^_</key>
+		<key>Transform.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>SwiftExtension-Package.xcscheme_^#shared#^_</key>
+		<key>swift-extension-Package.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -37,17 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ConvertSwift</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ConvertSwiftTests</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>DataStructures</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>Transform</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>UnitTests</key>
 		<dict>
 			<key>primary</key>
 			<true/>

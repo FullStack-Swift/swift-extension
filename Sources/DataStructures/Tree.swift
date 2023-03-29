@@ -8,7 +8,13 @@ public class TreeNode<T> {
   public weak var parent: TreeNode?
   public var children: [TreeNode<T>]
   
-  public init(value: T, id: UUID = UUID(), isHiddenChildren: Bool = false, parent: TreeNode? = nil, children: [TreeNode<T>] = []) {
+  public init(
+    value: T,
+    id: UUID = UUID(),
+    isHiddenChildren: Bool = false,
+    parent: TreeNode? = nil,
+    children: [TreeNode<T>] = []
+  ) {
     self.value = value
     self.id = id
     self.isHiddenChildren = isHiddenChildren

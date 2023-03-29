@@ -18,4 +18,8 @@ public extension Dictionary where Value: Hashable {
   func toSet() -> Set<Self> {
     toArray().toSet()
   }
+  
+  func has(key: Self.Key) -> Bool {
+    self[key] != nil
+  }
 }

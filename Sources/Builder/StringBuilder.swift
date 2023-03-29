@@ -1,17 +1,13 @@
 import Foundation
 
-public protocol StringBuilerProtocol {
-  var value: String {get}
-}
-
 @resultBuilder
 public enum StringBuilder {
-  public static func buildArray(_ strings: [[String]]) -> [String] {
-    strings.flatMap { $0 }
+  public static func buildArray(_ strings: [String]) -> [String] {
+    strings
   }
   
   public static func buildBlock(_ strings: [String]...) -> [String] {
-    strings.flatMap { $0 }
+    strings.flatMap{$0}
   }
   
   public static func buildEither(first strings: [String]) -> [String] {

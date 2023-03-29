@@ -1,9 +1,9 @@
 import Foundation
 import Nimble
 import Quick
-import ConvertSwift
+import Transform
 
-class EncodableSpec: QuickSpec {
+class DictionarySpec: QuickSpec {
     
     override func spec() {
         

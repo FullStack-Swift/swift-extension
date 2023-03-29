@@ -1,7 +1,7 @@
 import Foundation
 import Quick
 import Nimble
-import ConvertSwift
+import Transform
 
 class IntSpec: QuickSpec {
     

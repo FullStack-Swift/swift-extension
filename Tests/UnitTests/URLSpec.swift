@@ -1,7 +1,7 @@
 import Foundation
 import Nimble
 import Quick
-import ConvertSwift
+import Transform
 
 class URLSpec: QuickSpec {
     
