@@ -22,19 +22,27 @@ let package = Package(
     .package(url: "https://github.com/Quick/Quick.git", from: "4.0.0"),
     .package(url: "https://github.com/Quick/Nimble.git", from: "9.2.0"),
     .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.1.0"),
+    .package(url: "https://github.com/apple/swift-collections", from: "1.0.2"),
+    .package(url: "https://github.com/pointfreeco/swift-identified-collections", from: "1.0.0"),
   ],
   targets: [
     // Targets are the basic building blocks of a package. A target can define a module or a test suite.
     // Targets can depend on other targets in this package, and on products in packages this package depends on.
     .target(
       name: "Transform",
-      dependencies: []),
+      dependencies: [
+        .product(name: "IdentifiedCollections", package: "swift-identified-collections"),
+        .product(name: "OrderedCollections", package: "swift-collections"),
+      ]),
     .target(
       name: "DataStructures",
       dependencies: []),
     .target(
       name: "Builder",
-      dependencies: []),
+      dependencies: [
+        .product(name: "IdentifiedCollections", package: "swift-identified-collections"),
+        .product(name: "OrderedCollections", package: "swift-collections"),
+      ]),
     .testTarget(
       name: "UnitTests",
       dependencies: ["DataStructures", "Transform", "Quick", "Nimble"]),

@@ -25,4 +25,13 @@ public extension Int {
     return UInt(self)
   }
   
+  func toNano() -> Double {
+    self.toDouble()/1_000_000_000
+  }
+}
+
+extension UInt64 {
+  public init(seconds: Double) {
+    self.init(seconds.nano)
+  }
 }

@@ -19,7 +19,6 @@ public extension Data {
     }
   }
   
-#if os(iOS)
   func toData(keyPath: String? = nil) -> Self {
     guard let keyPath = keyPath else {
       return self
@@ -38,5 +37,35 @@ public extension Data {
     }
     return self
   }
-#endif
+  
+  func hasData(keyPath: String? = nil) -> Bool {
+    guard  let keyPath = keyPath else { return true }
+    do {
+      let json = try JSONSerialization.jsonObject(with: self, options: [])
+      if let nestedJson = (json as AnyObject).value(forKeyPath: keyPath) {
+        guard JSONSerialization.isValidJSONObject(nestedJson) else {
+          return false
+        }
+        let _ = try JSONSerialization.data(withJSONObject: nestedJson)
+        return false
+      }
+    } catch {
+      return false
+    }
+    return false
+  }
+  
+  subscript(_ keyPath: String? = nil) -> Self? {
+    toData(keyPath: keyPath)
+  }
+  
+  func toDataPrettyPrinted() -> Self {
+    do {
+      let dataAsJSON = try JSONSerialization.jsonObject(with: self)
+      let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
+      return prettyData
+    } catch {
+      return self // fallback to original data if it can't be serialized.
+    }
+  }
 }

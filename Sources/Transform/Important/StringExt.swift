@@ -1,7 +1,7 @@
 import Foundation
 
 public extension String {
-  func toData(using:String.Encoding = .utf8) -> Data? {
+  func toData(using: String.Encoding = .utf8) -> Data? {
     return self.data(using: using)
   }
   

@@ -22,4 +22,14 @@ public extension Dictionary where Value: Hashable {
   func has(key: Self.Key) -> Bool {
     self[key] != nil
   }
+  
+  func pick(keys: [Key]) -> [Key: Value] {
+    keys.reduce(into: [Key: Value]()) { partialResult, item in
+      partialResult[item] = self[item]
+    }
+  }
+  
+  func keys(for value: Value) -> [Key] {
+    return keys.filter({ self[$0] == value})
+  }
 }

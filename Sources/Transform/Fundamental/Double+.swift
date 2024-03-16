@@ -20,4 +20,20 @@ public extension Double {
   func toFloat() -> Float {
     toString().toFloat()!
   }
+  
+  func toNano() -> Double {
+    self * 1_000_000_000
+  }
+  
+  func toGiga() -> Double {
+    self / 1_000_000_000
+  }
+  
+  var nano: Double {
+    self * 1_000_000_000
+  }
+  
+  var giga: Double {
+    self / 1_000_000_000
+  }
 }
