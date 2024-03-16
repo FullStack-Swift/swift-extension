@@ -4,9 +4,9 @@ import Quick
 import Transform
 
 class EncodableSpec: QuickSpec {
+  
+  override func spec() {
     
-    override func spec() {
-        
-    }
-    
+  }
+  
 }

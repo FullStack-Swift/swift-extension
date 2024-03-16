@@ -4,9 +4,8 @@ import Quick
 import Transform
 
 class DictionarySpec: QuickSpec {
+  
+  override func spec() {
     
-    override func spec() {
-        
-    }
-    
+  }
 }

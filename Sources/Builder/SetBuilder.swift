@@ -1,28 +1,9 @@
 import Foundation
 
 @resultBuilder
-public enum ArrayBuilder<Element> {
+public enum SetBuilder<Element> {
+  
   public typealias Component = [Element]
-  
-  public static func buildArray(_ component: [Element]) -> [Element] {
-    component
-  }
-  
-  public static func buildPartialBlock(first: Element) -> Element {
-    first
-  }
-  
-  public static func buildPartialBlock(first: [Element]) -> [Element] {
-    first
-  }
-  
-  public static func buildPartialBlock(accumulated: [Element], next: Element) -> [Element] {
-    accumulated + [next]
-  }
-  
-  public static func buildPartialBlock(accumulated: [Element], next: [Element]) -> [Element] {
-    accumulated + next
-  }
   
   public static func buildBlock() -> Component {
     []
@@ -38,9 +19,9 @@ public enum ArrayBuilder<Element> {
   
   public static func buildOptional(_ component: Element?) -> Component {
     if let component {
-      return [component]
+      [component]
     } else {
-      return []
+      []
     }
   }
   
@@ -57,8 +38,16 @@ public enum ArrayBuilder<Element> {
   }
 }
 
-public extension Array {
-  init(@ArrayBuilder<Element> builder: () -> [Element]) {
+public extension Set {
+  
+  init(@SetBuilder<Element> builder: () -> Set<Element>) {
     self = builder()
   }
+  
 }
+
+public func setBuilder<Element>(@SetBuilder<Element> builder: () -> Set<Element>) -> Set<Element> {
+  builder()
+}
+
+

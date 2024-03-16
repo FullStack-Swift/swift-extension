@@ -4,9 +4,8 @@ import Quick
 import Transform
 
 class DataSpec: QuickSpec {
+  
+  override func spec() {
     
-    override func spec() {
-        
-    }
-    
+  }
 }

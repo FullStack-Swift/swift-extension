@@ -5,12 +5,9 @@ import Nimble
 import Transform
 
 class NSNumberSpec: QuickSpec {
+  
+  override func spec() {
     
-    override func spec() {
-        
-    }
+  }
 }
-
-
-
 #endif

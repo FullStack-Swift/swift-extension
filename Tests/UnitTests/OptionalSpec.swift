@@ -4,9 +4,9 @@ import Quick
 import Transform
 
 class OptionalSpec: QuickSpec {
+  
+  override func spec() {
     
-    override func spec() {
-        
-    }
-    
+  }
+  
 }
